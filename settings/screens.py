@@ -1,5 +1,6 @@
-# DatBugg
-# https://datbugg.com
+# Antonio Sarosi
+# https://youtube.com/c/antoniosarosi
+# https://github.com/antoniosarosi/dotfiles
 
 # Multimonitor support
 

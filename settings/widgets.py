@@ -1,6 +1,3 @@
-# DatBugg
-# https://datbugg.com
-
 from libqtile import widget
 from settings.theme import colors
 
@@ -14,7 +11,7 @@ def base(fg='text', bg='dark'):
 
 
 def separator():
-    return widget.Sep(**base(), linewidth=0, padding=5)
+    return widget.Sep(**base(), linewidth=1, padding=5)
 
 
 def icon(fg='text', bg='dark', fontsize=16, text="?"):
@@ -30,8 +27,8 @@ def powerline(fg="light", bg="dark"):
     return widget.TextBox(
         **base(fg, bg),
         text="", # Icon: nf-oct-triangle_left
-        fontsize=37,
-        padding=-2
+        fontsize=60,
+        padding=-11
     )
 
 
@@ -40,7 +37,7 @@ def workspaces():
         separator(),
         widget.GroupBox(
             **base(fg='light'),
-            font='mononoki Nerd Font',
+            font='UbuntuMono Nerd Font',
             fontsize=15,
             margin_y=3,
             margin_x=0,
@@ -126,7 +123,7 @@ secondary_widgets = [
 ]
 
 widget_defaults = {
-    'font': 'mononoki Nerd Font',
+    'font': 'UbuntuMono Nerd Font Bold',
     'fontsize': 12,
     'padding': 1,
 }

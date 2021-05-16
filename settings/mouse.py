@@ -1,6 +1,3 @@
-# DatBugg
-# https://datbugg.com
-
 from libqtile.config import Drag, Click
 from libqtile.command import lazy
 from settings.keys import mod

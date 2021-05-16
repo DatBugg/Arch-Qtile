@@ -1,5 +1,8 @@
-# DatBugg
-# https://datbugg.com
+# Antonio Sarosi
+# https://youtube.com/c/antoniosarosi
+# https://github.com/antoniosarosi/dotfiles
+
+# Qtile keybindings
 
 from libqtile.config import Key
 from libqtile.command import lazy

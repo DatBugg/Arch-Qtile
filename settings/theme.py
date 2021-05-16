@@ -1,5 +1,6 @@
-# DatBugg
-# https://datbugg.com
+# Antonio Sarosi
+# https://youtube.com/c/antoniosarosi
+# https://github.com/antoniosarosi/dotfiles
 
 # Theming for Qtile
 
@@ -11,7 +12,7 @@ from settings.path import qtile_path
 
 
 def load_theme():
-    theme = "nord-wave"
+    theme = "dark-grey"
 
     config = path.join(qtile_path, "config.json")
     if path.isfile(config):
