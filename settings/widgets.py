@@ -3,7 +3,7 @@ from settings.theme import colors
 
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
-def base(fg='text', bg='dark'): 
+def base(fg='white', bg='dark'): 
     return {
         'foreground': colors[fg],
         'background': colors[bg]
@@ -14,7 +14,7 @@ def separator():
     return widget.Sep(**base(), linewidth=1, padding=5)
 
 
-def icon(fg='text', bg='dark', fontsize=16, text="?"):
+def icon(fg='white', bg='dark', fontsize=16, text="?"):
     return widget.TextBox(
         **base(fg, bg),
         fontsize=fontsize,
@@ -37,8 +37,8 @@ def workspaces():
         separator(),
         widget.GroupBox(
             **base(fg='light'),
-            font='UbuntuMono Nerd Font',
-            fontsize=15,
+            font='Mononoki Nerd Font',
+            fontsize=14,
             margin_y=3,
             margin_x=0,
             padding_y=8,
@@ -67,37 +67,41 @@ primary_widgets = [
 
     separator(),
 
-    powerline('color4', 'dark'),
+    powerline('color5', 'dark'),
 
-    icon(bg="color4", text=' '), # Icon: nf-fa-download
+    icon(bg="color5", text=' '), # Icon: nf-fa-download
     
     widget.CheckUpdates(
-        background=colors['color4'],
-        colour_have_updates=colors['text'],
-        colour_no_updates=colors['text'],
+        background=colors['color5'],
+        colour_have_updates=colors['white'],
+        colour_no_updates=colors['white'],
         no_update_string='0',
         display_format='{updates}',
         update_interval=1800,
         custom_command='checkupdates',
     ),
 
+    powerline('color4', 'color5'),
+
+    icon(bg="color4", text=' '),  # Icon: nf-fa-feed
+    
+    widget.Net(**base(bg='color4'), interface='wlp2s0'),
+
     powerline('color3', 'color4'),
 
-    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
-    
-    widget.Net(**base(bg='color3'), interface='wlp2s0'),
+    widget.CurrentLayoutIcon(**base(bg='color3'), scale=0.65),
+
+    widget.CurrentLayout(**base(bg='color3'), padding=5),    
 
     powerline('color2', 'color3'),
 
-    widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
+    icon(bg="color2", fontsize=25, text=' '), # Icon: nf-mdi-calendar_clock
 
-    widget.CurrentLayout(**base(bg='color2'), padding=5),
+    widget.Clock(**base(bg='color2'), format='%d/%m/%Y - %H:%M '),
 
     powerline('color1', 'color2'),
-
-    icon(bg="color1", fontsize=17, text=' '), # Icon: nf-mdi-calendar_clock
-
-    widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
+ 
+    widget.Battery(**base(bg='color1'), format='{char} {percent:2.0%} {hour:d}:{min:02d}'),
 
     powerline('dark', 'color1'),
 
@@ -123,7 +127,7 @@ secondary_widgets = [
 ]
 
 widget_defaults = {
-    'font': 'UbuntuMono Nerd Font Bold',
+    'font': 'Mononoki Nerd Font',
     'fontsize': 12,
     'padding': 1,
 }

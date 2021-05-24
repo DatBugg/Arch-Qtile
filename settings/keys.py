@@ -58,6 +58,9 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Browser
     ([mod], "b", lazy.spawn("firefox")),
 
+    # VSCode
+    ([mod], "c", lazy.spawn("code")),
+
     # File Explorer
     ([mod], "e", lazy.spawn("pcmanfm")),
 
@@ -69,7 +72,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "shift"], "r", lazy.spawn("redshift -x")),
 
     # Screenshot
-    ([mod], "s", lazy.spawn("scrot")),
+    ([mod], "s", lazy.spawn("scrot documents/photos/")),
 
     # ------------ Hardware Configs ------------
 
